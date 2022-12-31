@@ -1,0 +1,73 @@
+<head>
+    <title>
+        Betsson Frontend Test
+    </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment-with-locales.min.js" integrity="sha512-42PE0rd+wZ2hNXftlM78BSehIGzezNeQuzihiBCvUEB3CVxHvsShF86wBWwQORNxNINlBPuq7rG4WWhNiTVHFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css" integrity="sha512-Ez0cGzNzHR1tYAv56860NLspgUGuQw16GiOOp/I2LuTmpSK9xDXlgJz3XN4cnpXWDmkNBKXR/VDMTCnAaEooxA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <nav class="navbar sticky-top flex-md-nowrap pl-4" style="background-color: #3c3c3c;">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0 m-md-4" href="https://leaseweb.com" target="_blank">
+            <img width="50%"
+                src="https://servisson-cs-lobby.s3-eu-west-1.amazonaws.com/production/s3-images/site/racebets/racebets_logo_black.png">
+        </a>
+    </nav>
+
+    <div class="container-fluid" style="text-align: center;">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-3 p-4">
+                <div class="border">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input checkbox" style="filter: hue-rotate(210deg); border-radius: 50%; transform: scale(0.5);" type="checkbox" id="raceTypeGallop" name="raceType" value="G" onclick="manageRaceType(this)" checked>
+                        <label class="form-check-label" for="raceTypeGallop">
+                            <img style="fill: #3c3c3c;" src="assets/race_types/grey/G.svg">
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" style="filter: hue-rotate(0deg); border-radius: 50%; transform: scale(0.5);" type="checkbox" id="raceTypeJump" name="raceType" value="J" onclick="manageRaceType(this)" checked>
+                        <label class="form-check-label" for="raceTypeJump">
+                            <img style="fill: #3c3c3c;" src="assets/race_types/grey/J.svg">
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" style="filter: hue-rotate(150deg); border-radius: 50%; transform: scale(0.5);" type="checkbox" id="raceTypeTrot" name="raceType" value="T" onclick="manageRaceType(this)" checked>
+                        <label class="form-check-label" for="raceTypeTrot">
+                            <img style="fill: #3c3c3c;" src="assets/race_types/grey/T.svg">
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" style="filter: hue-rotate(60deg); border-radius: 50%; transform: scale(0.5);" type="checkbox" id="raceTypeDogs" name="raceType" value="D" onclick="manageRaceType(this)">
+                        <label class="form-check-label" for="raceTypeDogs">
+                            <img style="fill: #3c3c3c;" src="assets/race_types/grey/D.svg">
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div id="next-race-box" style="display: none;" class="col-md-6 p-3">
+                <div class="card mb-3" style="max-width: 18rem;">
+                    <div class="card-header text-start text-white" style="background-color: #3c3c3c">
+                        <img width="8%" id="eventCountry">
+                        <span id="eventTitle" style="font-family: Tahoma, Geneva, Verdana, sans-serif;" class="small"></span>
+                        <span id="timeToStart"style="float: right!important; font-family: Tahoma, Geneva, Verdana, sans-serif;" class="small">5 minutes</span>
+                    </div>
+                    <div class="card-body text-white text-start fs-6" style="background-color: #3c3c3c">
+                        <p class="card-text">
+                            <span id="numberOfRunners" style="font-family: Tahoma, Geneva, Verdana, sans-serif;" class="small"></span> | 
+                            <span id="distance" style="font-family: Tahoma, Geneva, Verdana, sans-serif;" class="small"></span> | 
+                            <span id="amount" style="font-family: Tahoma, Geneva, Verdana, sans-serif;" class="small"></span>
+                            <span id="currency" style="font-family: Tahoma, Geneva, Verdana, sans-serif;" class="small"></span>
+                            <span style="float: right"><img id="raceTypeSvg"></span>
+                        </p>
+                    </div>
+                    <div id="runners"></div>
+                  </div>
+            </div>
+        </div>
+
+    </div>
+</body>
